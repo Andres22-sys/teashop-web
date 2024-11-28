@@ -1,0 +1,49 @@
+/* ----- GLOBAL STYLING ----- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+/* ----- GLOBAL COLORS ----- */
+:root {
+  --primary-color: #2c3e50; /* Dark slate blue for header and footer */
+  --secondary-color: #34495e; /* Medium slate gray for cards and sections */
+  --accent-color: #e67e22; /* Vibrant orange for highlights */
+  --background-color: #1a252f; /* Deep navy for background */
+  --text-color: #ecf0f1; /* Bright white for text */
+  --highlight-color: #f39c12; /* Golden yellow for hover and accents */
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+main {
+  padding: 0;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--highlight-color);
+}
+
+/** {*/
+/*  outline: 1px solid rgb(255, 0, 0); !* Red outline for all elements *!*/
+/*}*/

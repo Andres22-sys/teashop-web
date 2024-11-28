@@ -1,0 +1,29 @@
+/* ----- CONTACT SECTION ----- */
+.contact {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.contact h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--highlight-color);
+}
+
+.contact p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+.contact p a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.contact p a:hover {
+    color: var(--highlight-color);
+}

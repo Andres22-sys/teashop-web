@@ -1,0 +1,43 @@
+/* ----- MISSION SECTION ----- */
+.mission-banner {
+    display: grid;
+    place-items: center;
+    height: 80vh;
+    background: linear-gradient(
+            rgba(28, 40, 51, 0.13),
+            rgba(28, 40, 51, 0.08)
+    ),
+    url("../assets/images/img-mission-background.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.mission {
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(44, 62, 80, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.mission h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.mission h4 {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+@media (max-width: 800px) {
+    .mission {
+        max-width: 800px;
+        padding: 20px;
+        border-radius: 0;
+    }
+}

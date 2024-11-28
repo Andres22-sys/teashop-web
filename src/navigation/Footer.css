@@ -1,0 +1,36 @@
+/* ----- FOOTER STYLING ----- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    width: 100%; /* Ensures full width */
+    position: relative; /* Ensures normal document flow */
+    left: 0; /* Ensures alignment starts from the left */
+    box-sizing: border-box; /* Includes padding in the width */
+}
+
+footer p {
+    margin: 5px 0; /* Add space between multiple paragraphs */
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: var(--highlight-color); /* Change color on hover */
+}
+
+/* ----- RESPONSIVE FOOTER ----- */
+@media screen and (min-width: 768px) {
+    footer {
+        flex-direction: row; /* Switch to horizontal layout for larger screens */
+        justify-content: space-between; /* Spread content across the footer */
+        padding: 20px 40px; /* Add more padding on wider screens */
+    }
+}
