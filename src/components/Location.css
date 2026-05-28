@@ -1,8 +1,7 @@
 /* ----- LOCATIONS SECTION ----- */
 .locations {
-    margin: 60px auto;
-    max-width: 1200px;
-    padding: 80px 20px;
+    margin: 40px auto;
+    padding: 56px 0;
     text-align: center;
 }
 
@@ -14,19 +13,19 @@
 
 .places {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--gap);
 }
 
 .location {
     background-color: var(--secondary-color);
     color: var(--text-color);
     padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: var(--radius);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
 .location:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }

@@ -12,23 +12,23 @@ const FeaturedTea = () => {
             <h3>What&#39;s Steeping at The Tea Cozy?</h3>
             <div className="teas">
                 <div className="tea">
-                    <img src={berryBlitzTea} alt="Fall Berry Blitz Tea" />
+                    <img className="tea-image" src={berryBlitzTea} alt="Fall Berry Blitz Tea" loading="lazy" decoding="async" />
                     <h4>Fall Berry Blitz Tea</h4>
                 </div>
                 <div className="tea">
-                    <img src={spicedRumTea} alt="Spiced Rum Tea" />
+                    <img className="tea-image" src={spicedRumTea} alt="Spiced Rum Tea" loading="lazy" decoding="async" />
                     <h4>Spiced Rum Tea</h4>
                 </div>
                 <div className="tea">
-                    <img src={donut} alt="Seasonal Donuts" />
+                    <img className="tea-image" src={donut} alt="Seasonal Donuts" loading="lazy" decoding="async" />
                     <h4>Seasonal Donuts</h4>
                 </div>
                 <div className="tea">
-                    <img src={myrtleTea} alt="Myrtle Ave Tea" />
+                    <img className="tea-image" src={myrtleTea} alt="Myrtle Ave Tea" loading="lazy" decoding="async" />
                     <h4>Myrtle Ave Tea</h4>
                 </div>
                 <div className="tea">
-                    <img src={bedfordTea} alt="Bedford Bizarre Tea" />
+                    <img className="tea-image" src={bedfordTea} alt="Bedford Bizarre Tea" loading="lazy" decoding="async" />
                     <h4>Bedford Bizarre Tea</h4>
                 </div>
             </div>

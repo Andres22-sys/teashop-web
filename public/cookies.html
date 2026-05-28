@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cookie Policy — The Tea Cozy</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --primary:    #2c3e50;
+            --secondary:  #34495e;
+            --accent:     #e67e22;
+            --highlight:  #f39c12;
+            --bg:         #1a252f;
+            --text:       #ecf0f1;
+            --muted:      #95a5a6;
+            --max-width:  780px;
+            --radius:     10px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--highlight); }
+
+        .topbar {
+            background: var(--primary);
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+        }
+
+        .topbar-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .topbar-brand:hover { color: var(--highlight); }
+
+        .topbar-back {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .topbar-back:hover { color: var(--highlight); }
+
+        .page-hero {
+            background: var(--secondary);
+            padding: 56px 24px 48px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .page-hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .page-hero .meta {
+            font-size: 0.875rem;
+            color: var(--muted);
+        }
+
+        .content-wrap {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 52px 24px 80px;
+        }
+
+        .intro {
+            background: var(--secondary);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 20px 24px;
+            margin-bottom: 48px;
+            color: var(--muted);
+            font-size: 0.9375rem;
+        }
+
+        section.legal-section {
+            margin-bottom: 44px;
+        }
+
+        section.legal-section h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--secondary);
+        }
+
+        section.legal-section p {
+            margin-bottom: 14px;
+            color: var(--text);
+        }
+
+        section.legal-section ul {
+            margin: 10px 0 14px 20px;
+        }
+
+        section.legal-section li {
+            margin-bottom: 8px;
+        }
+
+        /* Cookie type table */
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 14px;
+            font-size: 0.9rem;
+        }
+
+        .cookie-table th,
+        .cookie-table td {
+            text-align: left;
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--primary);
+        }
+
+        .cookie-table th {
+            background: var(--primary);
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .cookie-table tr:hover td {
+            background: rgba(52, 73, 94, 0.4);
+        }
+
+        .contact-box {
+            background: var(--secondary);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-top: 52px;
+        }
+
+        .contact-box h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .site-footer {
+            background: var(--secondary);
+            border-top: 1px solid var(--primary);
+            padding: 24px;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--muted);
+        }
+
+        .site-footer .footer-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .site-footer nav { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+        .site-footer a { color: var(--accent); font-weight: 500; font-size: 0.875rem; }
+        .site-footer a:hover { color: var(--highlight); }
+
+        @media (max-width: 600px) {
+            .site-footer .footer-inner { flex-direction: column; align-items: center; }
+            .cookie-table { font-size: 0.82rem; }
+            .cookie-table th, .cookie-table td { padding: 8px 10px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topbar">
+        <a href="/" class="topbar-brand">The Tea Cozy</a>
+        <a href="/" class="topbar-back">&#8592; Back to home</a>
+    </div>
+
+    <div class="page-hero">
+        <h1>Cookie Policy</h1>
+        <p class="meta">Last updated: May 2026</p>
+    </div>
+
+    <div class="content-wrap">
+
+        <div class="intro">
+            This Cookie Policy explains what cookies are, which ones we use on our website, and how you can manage your preferences. For more detail on how we handle your personal data, see our <a href="/privacy.html">Privacy Policy</a>.
+        </div>
+
+        <section class="legal-section">
+            <h2>1. What Are Cookies?</h2>
+            <p>Cookies are small text files that are placed on your device when you visit a website. They allow the site to remember information about your visit, making it easier for you to use the site and helping us understand how people use it.</p>
+            <p>Cookies can be "session" cookies, which expire when you close your browser, or "persistent" cookies, which remain on your device for a set period or until you delete them.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>2. Cookies We Use</h2>
+            <p>We use the following categories of cookies on our website:</p>
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Purpose</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Strictly Necessary</strong></td>
+                        <td>Enable core website functionality (e.g., navigation, form submission). The site cannot function without these.</td>
+                        <td>Session</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Preferences</strong></td>
+                        <td>Remember settings you have chosen, such as language or region, so you don't need to re-enter them on each visit.</td>
+                        <td>1 year</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Analytics</strong></td>
+                        <td>Help us understand how visitors interact with our site by collecting anonymised usage statistics (e.g., pages visited, time on page).</td>
+                        <td>Up to 2 years</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Marketing</strong></td>
+                        <td>Used to deliver relevant advertisements or promotions. We currently do not run advertising campaigns, so these are not active.</td>
+                        <td>N/A</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="legal-section">
+            <h2>3. Analytics Cookies</h2>
+            <p>We may use an analytics service to help us understand website traffic. Analytics cookies collect information in an anonymised form, including the number of visitors, where visitors have come from, and the pages they visited.</p>
+            <p>We do not use this data to identify individual users, and we do not share it with third parties for marketing purposes.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>4. Managing Your Cookie Preferences</h2>
+            <p>You can control and delete cookies at any time through your browser settings. Here's how to manage cookies in the most common browsers:</p>
+            <ul>
+                <li><strong>Chrome:</strong> Settings &rarr; Privacy and security &rarr; Cookies and other site data</li>
+                <li><strong>Firefox:</strong> Settings &rarr; Privacy &amp; Security &rarr; Cookies and Site Data</li>
+                <li><strong>Safari:</strong> Preferences &rarr; Privacy &rarr; Manage Website Data</li>
+                <li><strong>Edge:</strong> Settings &rarr; Cookies and site permissions &rarr; Manage and delete cookies</li>
+            </ul>
+            <p>Please note that disabling strictly necessary cookies may impact the functionality of our website.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>5. Changes to This Policy</h2>
+            <p>We may update this Cookie Policy as our website or applicable laws change. When we do, we will revise the "last updated" date above. We encourage you to review this page periodically.</p>
+        </section>
+
+        <div class="contact-box">
+            <h2>Questions?</h2>
+            <p>If you have any questions about our use of cookies, please contact us:</p>
+            <p><strong>The Tea Cozy</strong><br>
+            123 Blossom Lane, Suite 4<br>
+            Portland, OR 97201<br>
+            <a href="mailto:hello@theteacozy.com">hello@theteacozy.com</a></p>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span>&copy; The Tea Cozy 2026</span>
+            <nav aria-label="Legal pages">
+                <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a>
+                <a href="/cookies.html">Cookies</a>
+                <a href="/accessibility.html">Accessibility</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -2,42 +2,46 @@
 .mission-banner {
     display: grid;
     place-items: center;
-    height: 80vh;
-    background: linear-gradient(
-            rgba(28, 40, 51, 0.13),
-            rgba(28, 40, 51, 0.08)
-    ),
-    url("../assets/images/img-mission-background.jpg");
+    min-height: 60vh;
+    background: linear-gradient(rgba(28, 40, 51, 0.18),
+            rgba(28, 40, 51, 0.12)),
+        url("../assets/images/img-mission-background.jpg");
     background-size: cover;
     background-position: center;
     text-align: center;
     color: var(--text-color);
+    padding: 48px 0;
 }
 
 .mission {
-    max-width: 800px;
-    padding: 20px;
+    max-width: 900px;
+    padding: 28px;
     background-color: rgba(44, 62, 80, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    border-radius: var(--radius);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
 }
 
 .mission h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+    font-size: 2.4rem;
+    margin-bottom: 12px;
     color: var(--accent-color);
 }
 
 .mission h4 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     line-height: 1.8;
     color: var(--text-color);
+    font-weight: 400;
 }
 
 @media (max-width: 800px) {
     .mission {
-        max-width: 800px;
-        padding: 20px;
-        border-radius: 0;
+        max-width: 100%;
+        padding: 18px;
+        border-radius: 8px;
+    }
+
+    .mission h2 {
+        font-size: 1.6rem;
     }
 }

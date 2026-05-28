@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Terms of Service — The Tea Cozy</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --primary:    #2c3e50;
+            --secondary:  #34495e;
+            --accent:     #e67e22;
+            --highlight:  #f39c12;
+            --bg:         #1a252f;
+            --text:       #ecf0f1;
+            --muted:      #95a5a6;
+            --max-width:  780px;
+            --radius:     10px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--highlight); }
+
+        .topbar {
+            background: var(--primary);
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+        }
+
+        .topbar-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .topbar-brand:hover { color: var(--highlight); }
+
+        .topbar-back {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .topbar-back:hover { color: var(--highlight); }
+
+        .page-hero {
+            background: var(--secondary);
+            padding: 56px 24px 48px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .page-hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .page-hero .meta {
+            font-size: 0.875rem;
+            color: var(--muted);
+        }
+
+        .content-wrap {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 52px 24px 80px;
+        }
+
+        .intro {
+            background: var(--secondary);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 20px 24px;
+            margin-bottom: 48px;
+            color: var(--muted);
+            font-size: 0.9375rem;
+        }
+
+        section.legal-section {
+            margin-bottom: 44px;
+        }
+
+        section.legal-section h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--secondary);
+        }
+
+        section.legal-section p {
+            margin-bottom: 14px;
+            color: var(--text);
+        }
+
+        section.legal-section ul {
+            margin: 10px 0 14px 20px;
+        }
+
+        section.legal-section li {
+            margin-bottom: 8px;
+        }
+
+        .contact-box {
+            background: var(--secondary);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-top: 52px;
+        }
+
+        .contact-box h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .site-footer {
+            background: var(--secondary);
+            border-top: 1px solid var(--primary);
+            padding: 24px;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--muted);
+        }
+
+        .site-footer .footer-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .site-footer nav { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+        .site-footer a { color: var(--accent); font-weight: 500; font-size: 0.875rem; }
+        .site-footer a:hover { color: var(--highlight); }
+
+        @media (max-width: 600px) {
+            .site-footer .footer-inner { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topbar">
+        <a href="/" class="topbar-brand">The Tea Cozy</a>
+        <a href="/" class="topbar-back">&#8592; Back to home</a>
+    </div>
+
+    <div class="page-hero">
+        <h1>Terms of Service</h1>
+        <p class="meta">Last updated: May 2026</p>
+    </div>
+
+    <div class="content-wrap">
+
+        <div class="intro">
+            Please read these Terms of Service carefully before using our website. By accessing or using theteacozy.com you agree to be bound by these terms. If you do not agree, please do not use our site.
+        </div>
+
+        <section class="legal-section">
+            <h2>1. Acceptance of Terms</h2>
+            <p>These Terms of Service ("Terms") govern your access to and use of the website operated by The Tea Cozy ("we," "us," or "our"). By visiting or using our site you confirm that you are at least 18 years old and agree to these Terms and our <a href="/privacy.html">Privacy Policy</a>.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>2. Use of the Website</h2>
+            <p>You agree to use this website only for lawful purposes and in a manner that does not infringe the rights of others. You must not:</p>
+            <ul>
+                <li>Use the site in any way that violates applicable local, national, or international laws or regulations.</li>
+                <li>Transmit any unsolicited or unauthorised advertising or promotional material.</li>
+                <li>Attempt to gain unauthorised access to our systems or networks.</li>
+                <li>Reproduce, copy, or re-sell any part of our website without our prior written permission.</li>
+            </ul>
+        </section>
+
+        <section class="legal-section">
+            <h2>3. Intellectual Property</h2>
+            <p>All content on this website — including text, images, graphics, logos, and tea descriptions — is the property of The Tea Cozy or its content suppliers and is protected by applicable copyright and intellectual property laws.</p>
+            <p>You may view, download, and print pages for your own personal, non-commercial use. Any other use requires our prior written consent.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>4. Product Information &amp; Availability</h2>
+            <p>We make every effort to ensure that tea descriptions, prices, and availability information on our website are accurate. However, we reserve the right to correct errors or omissions and to change information at any time without prior notice.</p>
+            <p>Product images are for illustrative purposes. Actual appearance may vary slightly due to monitor calibration and batch variation.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>5. Disclaimer of Warranties</h2>
+            <p>This website and its content are provided "as is" and "as available" without any warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+            <p>We do not warrant that the site will be error-free, uninterrupted, or free of viruses or other harmful components.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>6. Limitation of Liability</h2>
+            <p>To the fullest extent permitted by law, The Tea Cozy and its owners, employees, and agents shall not be liable for any indirect, incidental, special, or consequential damages arising out of your use of — or inability to use — this website or its content.</p>
+            <p>Our total liability for any claim arising from your use of this site shall not exceed the amount you paid, if any, to access the site.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>7. Third-Party Links</h2>
+            <p>Our website may include links to third-party websites for your convenience and information. These links do not constitute an endorsement. We have no control over the content of those sites and accept no responsibility for them.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>8. Governing Law</h2>
+            <p>These Terms are governed by and construed in accordance with the laws of the State of Oregon, United States, without regard to its conflict of law principles. Any disputes shall be subject to the exclusive jurisdiction of the courts located in Multnomah County, Oregon.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>9. Changes to These Terms</h2>
+            <p>We may revise these Terms from time to time. The updated version will be indicated by a revised "last updated" date. Your continued use of the website after any changes constitutes your acceptance of the new Terms.</p>
+        </section>
+
+        <div class="contact-box">
+            <h2>Questions?</h2>
+            <p>If you have any questions about these Terms, please contact us:</p>
+            <p><strong>The Tea Cozy</strong><br>
+            123 Blossom Lane, Suite 4<br>
+            Portland, OR 97201<br>
+            <a href="mailto:hello@theteacozy.com">hello@theteacozy.com</a></p>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span>&copy; The Tea Cozy 2026</span>
+            <nav aria-label="Legal pages">
+                <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a>
+                <a href="/cookies.html">Cookies</a>
+                <a href="/accessibility.html">Accessibility</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>

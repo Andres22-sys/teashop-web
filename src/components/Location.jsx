@@ -2,7 +2,7 @@ import "./Location.css";
 
 const Locations = () => {
     return (
-        <section className="locations" id="locations">
+        <section className="locations container" id="locations">
             <h2>Our Locations</h2>
             <div className="places">
                 <div className="location">

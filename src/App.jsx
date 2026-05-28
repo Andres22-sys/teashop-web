@@ -11,10 +11,12 @@ const App = () => {
         <div className="App">
             <Header />
             <main>
-                <Mission />
-                <FeaturedTea />
-                <Locations />
-                <Contact />
+                <div className="container">
+                    <Mission />
+                    <FeaturedTea />
+                    <Locations />
+                    <Contact />
+                </div>
             </main>
             <Footer />
         </div>

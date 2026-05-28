@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Accessibility — The Tea Cozy</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --primary:    #2c3e50;
+            --secondary:  #34495e;
+            --accent:     #e67e22;
+            --highlight:  #f39c12;
+            --bg:         #1a252f;
+            --text:       #ecf0f1;
+            --muted:      #95a5a6;
+            --max-width:  780px;
+            --radius:     10px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--highlight); }
+
+        .topbar {
+            background: var(--primary);
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+        }
+
+        .topbar-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .topbar-brand:hover { color: var(--highlight); }
+
+        .topbar-back {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .topbar-back:hover { color: var(--highlight); }
+
+        .page-hero {
+            background: var(--secondary);
+            padding: 56px 24px 48px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .page-hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .page-hero .meta {
+            font-size: 0.875rem;
+            color: var(--muted);
+        }
+
+        .content-wrap {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 52px 24px 80px;
+        }
+
+        .intro {
+            background: var(--secondary);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 20px 24px;
+            margin-bottom: 48px;
+            color: var(--muted);
+            font-size: 0.9375rem;
+        }
+
+        section.legal-section {
+            margin-bottom: 44px;
+        }
+
+        section.legal-section h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--secondary);
+        }
+
+        section.legal-section p {
+            margin-bottom: 14px;
+            color: var(--text);
+        }
+
+        section.legal-section ul {
+            margin: 10px 0 14px 20px;
+        }
+
+        section.legal-section li {
+            margin-bottom: 8px;
+        }
+
+        /* Status badge */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(230, 126, 34, 0.15);
+            border: 1px solid var(--accent);
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .contact-box {
+            background: var(--secondary);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-top: 52px;
+        }
+
+        .contact-box h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .site-footer {
+            background: var(--secondary);
+            border-top: 1px solid var(--primary);
+            padding: 24px;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--muted);
+        }
+
+        .site-footer .footer-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .site-footer nav { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+        .site-footer a { color: var(--accent); font-weight: 500; font-size: 0.875rem; }
+        .site-footer a:hover { color: var(--highlight); }
+
+        @media (max-width: 600px) {
+            .site-footer .footer-inner { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topbar">
+        <a href="/" class="topbar-brand">The Tea Cozy</a>
+        <a href="/" class="topbar-back">&#8592; Back to home</a>
+    </div>
+
+    <div class="page-hero">
+        <h1>Accessibility</h1>
+        <p class="meta">Last updated: May 2026</p>
+    </div>
+
+    <div class="content-wrap">
+
+        <div class="intro">
+            The Tea Cozy is committed to making our website accessible to everyone. We believe every visitor — regardless of ability or the technology they use — deserves a welcoming, inclusive experience.
+        </div>
+
+        <section class="legal-section">
+            <h2>1. Our Commitment</h2>
+            <div class="status-badge"><span class="status-dot"></span> Actively improving</div>
+            <p>We are working to ensure that our website conforms to the <strong>Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</strong>, published by the World Wide Web Consortium (W3C). These guidelines explain how to make web content more accessible to people with disabilities.</p>
+            <p>Accessibility is an ongoing effort. We regularly review our site and make improvements whenever we identify gaps.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>2. Measures We've Taken</h2>
+            <p>Steps we have taken to improve accessibility on this site include:</p>
+            <ul>
+                <li>Semantic HTML5 landmarks (<code>header</code>, <code>main</code>, <code>nav</code>, <code>footer</code>) to aid screen-reader navigation.</li>
+                <li>Descriptive <code>alt</code> text on all meaningful images.</li>
+                <li>Sufficient colour contrast between text and backgrounds across the site.</li>
+                <li>Keyboard-navigable interactive elements (menus, buttons, links).</li>
+                <li>Responsive design that works across screen sizes and zoom levels.</li>
+                <li><code>aria-label</code> attributes on navigation landmarks and icon-only buttons.</li>
+                <li>Skip-to-content link available for keyboard users (activate by pressing Tab on page load).</li>
+            </ul>
+        </section>
+
+        <section class="legal-section">
+            <h2>3. Known Limitations</h2>
+            <p>While we strive for full WCAG 2.1 AA compliance, there are areas we are still working to improve:</p>
+            <ul>
+                <li>Some older images in our gallery may have incomplete or generic alt text — we are adding descriptive alternatives progressively.</li>
+                <li>Third-party embedded content (such as maps or social media widgets) may not fully meet our standards; we are evaluating accessible alternatives.</li>
+            </ul>
+            <p>We are actively addressing these limitations. If you encounter a specific barrier, please let us know using the contact details below.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>4. Assistive Technology</h2>
+            <p>Our website is designed to be compatible with the following assistive technologies:</p>
+            <ul>
+                <li>Screen readers (NVDA, JAWS, VoiceOver, TalkBack)</li>
+                <li>Keyboard-only navigation</li>
+                <li>Browser zoom up to 200% without loss of content or functionality</li>
+                <li>High-contrast and forced-colour modes</li>
+            </ul>
+        </section>
+
+        <section class="legal-section">
+            <h2>5. Feedback &amp; Assistance</h2>
+            <p>We welcome feedback on the accessibility of our website. If you experience any difficulty accessing content or interacting with any feature, we want to know.</p>
+            <p>We aim to respond to accessibility feedback within <strong>5 business days</strong>. If we cannot resolve an accessibility barrier immediately, we will provide an accessible alternative where possible.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>6. Formal Complaints</h2>
+            <p>If you are not satisfied with our response, you may contact a relevant enforcement or oversight body in your jurisdiction. For users in the United States, you may contact the <strong>U.S. Department of Justice, ADA National Network</strong> at 1-800-514-0301 (voice) or 1-800-514-0383 (TTY).</p>
+        </section>
+
+        <div class="contact-box">
+            <h2>Get in Touch</h2>
+            <p>To report an accessibility issue or request information in an alternative format, please contact us:</p>
+            <p><strong>The Tea Cozy</strong><br>
+            123 Blossom Lane, Suite 4<br>
+            Portland, OR 97201<br>
+            <a href="mailto:hello@theteacozy.com">hello@theteacozy.com</a><br>
+            Phone: (503) 555-0192</p>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span>&copy; The Tea Cozy 2026</span>
+            <nav aria-label="Legal pages">
+                <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a>
+                <a href="/cookies.html">Cookies</a>
+                <a href="/accessibility.html">Accessibility</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>

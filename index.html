@@ -1,29 +1,43 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <!-- Character encoding -->
   <meta charset="UTF-8" />
 
   <!-- Viewport for responsive design -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Theme color for mobile UI -->
+  <meta name="theme-color" content="#1a252f" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/public/favicon.ico" />
+  <!-- Favicon (served from public/) -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  <!-- Preconnect Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts: Roboto (body) and Playfair Display (headings) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet">
 
   <!-- Document Title -->
   <title>The Tea Cozy</title>
 
   <!-- SEO: Description -->
-  <meta name="description" content="The Tea Cozy - Organic, sustainable, and artisanally curated tea from around the world." />
+  <meta name="description"
+    content="The Tea Cozy - Organic, sustainable, and artisanally curated tea from around the world." />
 
   <!-- Global Styles -->
   <link rel="stylesheet" href="/src/index.css" />
 </head>
-<body>
-<!-- Root div for React -->
-<div id="root"></div>
 
-<!-- Vite + React Entry Script -->
-<script type="module" src="/src/main.jsx"></script>
+<body>
+  <!-- Root div for React -->
+  <div id="root"></div>
+
+  <!-- Vite + React Entry Script -->
+  <script type="module" src="/src/main.jsx"></script>
 </body>
+
 </html>

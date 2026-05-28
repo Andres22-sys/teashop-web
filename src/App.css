@@ -3,6 +3,15 @@
   margin: 0 auto;
   padding: 0;
   text-align: center;
-  position: relative; /* Ensure it works with absolutely positioned elements like a fixed footer */
+  position: relative;
+  /* Ensure it works with absolutely positioned elements like a fixed footer */
 }
 
+main {
+  padding-top: 84px;
+  /* Offset for fixed header */
+}
+
+section {
+  padding: 48px 0;
+}

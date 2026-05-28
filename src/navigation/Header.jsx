@@ -12,21 +12,25 @@ const Header = () => {
 
     return (
         <header className="header">
-            <a href="#mission" className="header-logo">
+            <a href="#mission" className="header-logo" aria-label="The Tea Cozy home">
                 <img
                     src={teaCozyLogo}
                     alt="The Tea Cozy logo"
                     className="logo-image"
+                    loading="lazy"
+                    decoding="async"
                 />
             </a>
             <button
                 className="menu-toggle"
                 aria-label="Toggle navigation"
+                aria-expanded={menuOpen}
+                aria-controls="primary-navigation"
                 onClick={toggleMenu}
             >
                 ☰
             </button>
-            <nav className={`header-nav ${menuOpen ? "active" : ""}`}>
+            <nav id="primary-navigation" className={`header-nav ${menuOpen ? "active" : ""}`}>
                 <ul className="nav-list">
                     <li className="nav-item">
                         <a href="#mission" className="nav-link">

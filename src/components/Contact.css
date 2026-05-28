@@ -2,7 +2,7 @@
 .contact {
     text-align: center;
     padding: 40px 20px;
-    background-color: var(--primary-color);
+    background: transparent;
     color: var(--text-color);
 }
 
@@ -18,12 +18,32 @@
     margin: 5px 0;
 }
 
-.contact p a {
+.contact p a:not(.btn) {
     color: var(--accent-color);
     text-decoration: underline;
     transition: color 0.3s ease;
 }
 
-.contact p a:hover {
+.contact p a:not(.btn):hover {
     color: var(--highlight-color);
+}
+
+.contact-ctas {
+    display: inline-flex;
+    gap: 12px;
+    margin-top: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-ctas .btn {
+    display: inline-flex;
+    align-items: center;
+}
+
+@media (max-width: 480px) {
+    .contact-ctas {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
