@@ -1,14 +1,15 @@
 /* ----- LOCATIONS SECTION ----- */
 .locations {
-    margin: 40px auto;
-    padding: 56px 0;
     text-align: center;
+    background-color: var(--color-cream-deep);
+    border-radius: var(--radius);
+    padding: 56px 32px;
 }
 
 .locations h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--accent-color);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    margin-bottom: 24px;
+    color: var(--color-text);
 }
 
 .places {
@@ -18,14 +19,35 @@
 }
 
 .location {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    padding: 20px;
-    border-radius: var(--radius);
+    background-color: var(--color-cream);
+    color: var(--color-text);
+    padding: 28px 24px;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 6px 18px rgba(var(--shadow-color), 0.08);
     transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
 .location:hover {
     transform: translateY(-6px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 16px 32px rgba(var(--shadow-color), 0.16);
+}
+
+.pin-icon {
+    color: var(--color-terracotta);
+    margin-bottom: 8px;
+}
+
+.location h3 {
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.location p {
+    color: var(--color-text-soft);
+}
+
+@media (max-width: 600px) {
+    .locations {
+        padding: 40px 18px;
+    }
 }

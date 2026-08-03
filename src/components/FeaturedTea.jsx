@@ -1,36 +1,61 @@
-import berryBlitzTea from '/src/assets/images/img-berryblitz.jpg';
-import spicedRumTea from '/src/assets/images/img-spiced-rum.jpg';
-import donut from '/src/assets/images/img-donut.jpg';
-import myrtleTea from '/src/assets/images/img-myrtle-ave.jpg';
-import bedfordTea from '/src/assets/images/img-bedford-bizarre.jpg';
 import "./FeaturedTea.css";
+
+const optimizedImages = import.meta.glob(
+    "/src/assets/images/optimized/*.{jpg,webp,avif}",
+    { eager: true, import: "default" }
+);
+
+const SIZES = [400, 800, 1600];
+const CARD_SIZES = "(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw";
+
+const buildSrcSet = (name, ext) =>
+    SIZES.map((w) => {
+        const url = optimizedImages[`/src/assets/images/optimized/${name}-${w}.${ext}`];
+        return url ? `${url} ${w}w` : null;
+    })
+        .filter(Boolean)
+        .join(", ");
+
+// eslint-disable-next-line react/prop-types -- project does not use prop-types
+const TeaImage = ({ name, alt }) => {
+    const fallback = optimizedImages[`/src/assets/images/optimized/${name}-800.jpg`];
+    return (
+        <picture>
+            <source type="image/avif" srcSet={buildSrcSet(name, "avif")} sizes={CARD_SIZES} />
+            <source type="image/webp" srcSet={buildSrcSet(name, "webp")} sizes={CARD_SIZES} />
+            <img
+                className="tea-image"
+                src={fallback}
+                srcSet={buildSrcSet(name, "jpg")}
+                sizes={CARD_SIZES}
+                alt={alt}
+                loading="lazy"
+                decoding="async"
+            />
+        </picture>
+    );
+};
+
+const teas = [
+    { name: "img-berryblitz", title: "Fall Berry Blitz Tea" },
+    { name: "img-spiced-rum", title: "Spiced Rum Tea" },
+    { name: "img-donut", title: "Seasonal Donuts" },
+    { name: "img-myrtle-ave", title: "Myrtle Ave Tea" },
+    { name: "img-bedford-bizarre", title: "Bedford Bizarre Tea" },
+];
 
 const FeaturedTea = () => {
     return (
-        <section className="featured-tea" id="featured">
-            <h2>Tea of the Month</h2>
-            <h3>What&#39;s Steeping at The Tea Cozy?</h3>
+        <section className="featured-tea container" id="featured">
+            <span className="eyebrow">Tea of the Month</span>
+            <h2>What&#39;s Steeping at The Tea Cozy?</h2>
             <div className="teas">
-                <div className="tea">
-                    <img className="tea-image" src={berryBlitzTea} alt="Fall Berry Blitz Tea" loading="lazy" decoding="async" />
-                    <h4>Fall Berry Blitz Tea</h4>
-                </div>
-                <div className="tea">
-                    <img className="tea-image" src={spicedRumTea} alt="Spiced Rum Tea" loading="lazy" decoding="async" />
-                    <h4>Spiced Rum Tea</h4>
-                </div>
-                <div className="tea">
-                    <img className="tea-image" src={donut} alt="Seasonal Donuts" loading="lazy" decoding="async" />
-                    <h4>Seasonal Donuts</h4>
-                </div>
-                <div className="tea">
-                    <img className="tea-image" src={myrtleTea} alt="Myrtle Ave Tea" loading="lazy" decoding="async" />
-                    <h4>Myrtle Ave Tea</h4>
-                </div>
-                <div className="tea">
-                    <img className="tea-image" src={bedfordTea} alt="Bedford Bizarre Tea" loading="lazy" decoding="async" />
-                    <h4>Bedford Bizarre Tea</h4>
-                </div>
+                {teas.map((tea) => (
+                    <div className="tea" key={tea.name}>
+                        <TeaImage name={tea.name} alt={tea.title} />
+                        <h4>{tea.title}</h4>
+                    </div>
+                ))}
             </div>
         </section>
     );

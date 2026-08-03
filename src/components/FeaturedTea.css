@@ -1,32 +1,35 @@
 /* ----- TEAS SECTION ----- */
 .featured-tea {
     text-align: center;
-    margin: 40px auto;
-    max-width: var(--max-width);
-    padding: 48px 0;
 }
 
 .featured-tea h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: var(--highlight-color);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    margin-bottom: 32px;
+    color: var(--color-text);
 }
 
 .teas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    gap: 24px;
     margin-top: 20px;
 }
 
 .tea {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.02));
+    background: var(--color-cream-deep);
     border-radius: var(--radius);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 10px;
     align-items: stretch;
+    box-shadow: 0 8px 24px rgba(var(--shadow-color), 0.08);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.tea:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(var(--shadow-color), 0.18);
 }
 
 .tea-image {
@@ -34,19 +37,19 @@
     height: 220px;
     object-fit: cover;
     display: block;
-    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    transition: transform 0.4s ease;
 }
 
-.tea-image:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+.tea:hover .tea-image {
+    transform: scale(1.05);
 }
 
 .tea h4 {
-    padding: 12px;
-    font-size: 1rem;
-    color: var(--text-color);
+    padding: 16px 14px;
+    font-size: 1.05rem;
+    color: var(--color-text);
     background: transparent;
+    margin-bottom: 0;
 }
 
 /* ----- MEDIA QUERIES ----- */
@@ -59,37 +62,14 @@
 
     .teas {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 10px;
-    }
-
-    .teas img {
-        border-radius: 5px;
+        gap: 14px;
     }
 }
 
 /* Medium Screens (481px to 768px) */
 @media screen and (max-width: 768px) {
-    .featured-tea {
-        padding: 50px 10px;
-    }
-
-    .featured-tea h2 {
-        font-size: 1.8rem;
-    }
-
     .teas {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 15px;
-    }
-}
-
-/* Large Screens (Above 1200px) */
-@media screen and (min-width: 1200px) {
-    .featured-tea {
-        padding: 100px 0;
-    }
-
-    .teas img {
-        border-radius: 15px;
+        gap: 16px;
     }
 }

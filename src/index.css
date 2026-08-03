@@ -5,42 +5,71 @@
   padding: 0;
 }
 
+/* ----- GLOBAL COLORS -----
+   Warm, organic palette drawn from the brand's own product photography
+   (raw wood, linen, dried fruit & flowers) instead of a generic dark/tech theme. */
+:root {
+  --color-cream: #faf5ec;
+  /* Page background - warm ivory, not stark white */
+  --color-cream-deep: #f1e6d2;
+  /* Card / alt-section background */
+  --color-espresso: #2b2018;
+  /* Deepest brown for header/footer */
+  --color-espresso-soft: #4a382a;
+  /* Secondary dark brown */
+  --color-text: #2b2118;
+  /* Primary body text on light sections */
+  --color-text-soft: #6f5f4e;
+  /* Muted body text */
+  --color-sage: #6f7f5a;
+  /* Organic / sustainable accent */
+  --color-terracotta: #bd6431;
+  /* Primary accent - CTAs, links, highlights */
+  --color-terracotta-deep: #a2531f;
+  /* Hover / active state */
+  --color-gold: #c89b3c;
+  /* Secondary highlight */
+  --color-cream-text: #faf5ec;
+  /* Text on dark surfaces */
+
+  /* Legacy aliases kept so component-level CSS reads semantically */
+  --primary-color: var(--color-espresso);
+  --secondary-color: var(--color-cream-deep);
+  --accent-color: var(--color-terracotta);
+  --background-color: var(--color-cream);
+  --text-color: var(--color-text);
+  --highlight-color: var(--color-gold);
+  --muted: var(--color-text-soft);
+
+  --max-width: 1140px;
+  --gap: 1.5rem;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow-color: 43, 32, 24;
+}
+
 html {
+  scroll-behavior: smooth;
   -ms-overflow-style: none;
-  /* Hide scrollbar for Internet Explorer and Edge */
+  /* Hide scrollbar for IE and Edge */
   scrollbar-width: none;
   /* Hide scrollbar for Firefox */
 }
 
-/* ----- GLOBAL COLORS ----- */
-:root {
-  --primary-color: #2c3e50;
-  /* Dark slate blue for header and footer */
-  --secondary-color: #34495e;
-  /* Medium slate gray for cards and sections */
-  --accent-color: #e67e22;
-  /* Vibrant orange for highlights */
-  --background-color: #1a252f;
-  /* Deep navy for background */
-  --text-color: #ecf0f1;
-  /* Bright white for text */
-  --highlight-color: #f39c12;
-  /* Golden yellow for hover and accents */
-  --max-width: 1100px;
-  --gap: 1.25rem;
-  --radius: 10px;
-  --muted: #95a5a6;
+/* Hide scrollbar for Chrome, Safari, and other WebKit browsers.
+   Scrolling itself is untouched — only the visual track/thumb are removed. */
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Work Sans", "Segoe UI", Arial, sans-serif;
   font-size: 16px;
-  color: var(--text-color);
-  background-color: var(--background-color);
+  color: var(--color-text);
+  background-color: var(--color-cream);
   margin: 0;
   line-height: 1.6;
   overflow-x: hidden;
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -52,15 +81,29 @@ body {
   padding: calc(var(--gap) * 0.5) 0;
 }
 
-/* Headings use a serif display font for a modern look */
+/* Headings use a serif display font to signal an artisanal, boutique feel */
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: 'Playfair Display', Georgia, serif;
-  color: var(--text-color);
+  font-family: "Playfair Display", Georgia, serif;
+  color: var(--color-text);
   margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Small caps section label used to introduce each section */
+.eyebrow {
+  display: inline-block;
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  margin-bottom: 0.75rem;
 }
 
 /* Utility */
@@ -71,20 +114,37 @@ h5 {
 
 /* Buttons */
 .btn {
-  display: inline-block;
-  padding: 0.6rem 1rem;
-  background: var(--accent-color);
-  color: var(--text-color);
-  border: none;
-  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-terracotta);
+  color: var(--color-cream-text);
+  border: 2px solid var(--color-terracotta);
+  border-radius: 999px;
   cursor: pointer;
+  font-family: "Work Sans", sans-serif;
   font-weight: 600;
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .btn:hover {
+  background: var(--color-terracotta-deep);
+  border-color: var(--color-terracotta-deep);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 24px rgba(var(--shadow-color), 0.22);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-terracotta);
+}
+
+.btn-outline:hover {
+  background: var(--color-terracotta);
+  color: var(--color-cream-text);
 }
 
 main {
@@ -92,15 +152,17 @@ main {
 }
 
 a {
-  color: var(--accent-color);
+  color: var(--color-terracotta);
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 a:hover {
-  color: var(--highlight-color);
+  color: var(--color-gold);
 }
 
-/** {*/
-/*  outline: 1px solid rgb(255, 0, 0); !* Red outline for all elements *!*/
-/*}*/
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}

@@ -1,9 +1,9 @@
 /* ----- FOOTER STYLING ----- */
 footer {
     text-align: center;
-    padding: 20px 0;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
+    padding: 28px 0;
+    background-color: var(--color-espresso);
+    color: var(--color-cream-text);
     font-size: 0.95rem;
     width: 100%;
     box-sizing: border-box;
@@ -11,18 +11,21 @@ footer {
 
 footer p {
     margin: 0;
+    opacity: 0.85;
 }
 
 footer a {
-    color: var(--accent-color);
+    color: var(--color-cream-text);
     text-decoration: none;
-    font-weight: 600;
-    margin-left: 12px;
-    transition: color 0.2s ease-in-out, transform 0.12s ease;
+    font-weight: 500;
+    margin-left: 16px;
+    opacity: 0.85;
+    transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.12s ease;
 }
 
 footer a:hover {
-    color: var(--highlight-color);
+    color: var(--color-gold);
+    opacity: 1;
     transform: translateY(-2px);
 }
 
@@ -30,7 +33,7 @@ footer a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    gap: 16px;
     width: min(95%, var(--max-width));
     margin: 0 auto;
     padding: 6px 0;
@@ -38,6 +41,11 @@ footer a:hover {
 
 .footer-nav a:first-child {
     margin-left: 0;
+}
+
+.footer-legal {
+    margin-top: 6px;
+    font-size: 0.85rem;
 }
 
 .footer-left {

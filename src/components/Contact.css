@@ -1,37 +1,37 @@
 /* ----- CONTACT SECTION ----- */
 .contact {
     text-align: center;
-    padding: 40px 20px;
     background: transparent;
-    color: var(--text-color);
+    color: var(--color-text);
 }
 
 .contact h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: var(--highlight-color);
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    margin-bottom: 12px;
+    color: var(--color-text);
 }
 
-.contact p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 5px 0;
+.contact-intro {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-text-soft);
+    max-width: 480px;
+    margin: 0 auto 24px;
 }
 
 .contact p a:not(.btn) {
-    color: var(--accent-color);
+    color: var(--color-terracotta);
     text-decoration: underline;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 }
 
 .contact p a:not(.btn):hover {
-    color: var(--highlight-color);
+    color: var(--color-gold);
 }
 
 .contact-ctas {
     display: inline-flex;
-    gap: 12px;
-    margin-top: 12px;
+    gap: 16px;
     justify-content: center;
     align-items: center;
 }
@@ -44,6 +44,6 @@
 @media (max-width: 480px) {
     .contact-ctas {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
     }
 }
